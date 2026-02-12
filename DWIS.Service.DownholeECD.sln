@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWIS.Service.DownholeECD.Server", "DWIS.Service.DownholeECD.Server\DWIS.Service.DownholeECD.Server.csproj", "{0148087E-D765-477F-A9C8-F446D07E11BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWIS.Service.DownholeECD.DataSource", "DWIS.Service.DownholeECD.DataSource\DWIS.Service.DownholeECD.DataSource.csproj", "{F70BA5E8-7FFC-4E4A-8321-B9171FE1D970}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWIS.Service.DownholeECD.DataSink", "DWIS.Service.DownholeECD.DataSink\DWIS.Service.DownholeECD.DataSink.csproj", "{4C66D327-20A8-49D1-98A6-F48F66EEF3D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWIS.Service.DownholeECD.Model", "DWIS.Service.DownholeECD.Model\DWIS.Service.DownholeECD.Model.csproj", "{03789E97-B4FE-4847-B10B-91C4E4FA7D19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DWIS.Service.DownholeECD.ModelSharedOut", "DWIS.Service.DownholeECD.ModelSharedOut\DWIS.Service.DownholeECD.ModelSharedOut.csproj", "{8439DA17-720F-41D6-A8C1-8F7ED041EC7C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\docker-build-push-interpreter.yml = .github\workflows\docker-build-push-interpreter.yml
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0148087E-D765-477F-A9C8-F446D07E11BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0148087E-D765-477F-A9C8-F446D07E11BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0148087E-D765-477F-A9C8-F446D07E11BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0148087E-D765-477F-A9C8-F446D07E11BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F70BA5E8-7FFC-4E4A-8321-B9171FE1D970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F70BA5E8-7FFC-4E4A-8321-B9171FE1D970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F70BA5E8-7FFC-4E4A-8321-B9171FE1D970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F70BA5E8-7FFC-4E4A-8321-B9171FE1D970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C66D327-20A8-49D1-98A6-F48F66EEF3D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C66D327-20A8-49D1-98A6-F48F66EEF3D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C66D327-20A8-49D1-98A6-F48F66EEF3D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C66D327-20A8-49D1-98A6-F48F66EEF3D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03789E97-B4FE-4847-B10B-91C4E4FA7D19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03789E97-B4FE-4847-B10B-91C4E4FA7D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03789E97-B4FE-4847-B10B-91C4E4FA7D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03789E97-B4FE-4847-B10B-91C4E4FA7D19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8439DA17-720F-41D6-A8C1-8F7ED041EC7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8439DA17-720F-41D6-A8C1-8F7ED041EC7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8439DA17-720F-41D6-A8C1-8F7ED041EC7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8439DA17-720F-41D6-A8C1-8F7ED041EC7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE4A6059-4470-4112-AB2B-121F73EADE02}
+	EndGlobalSection
+EndGlobal
