@@ -24,42 +24,56 @@ namespace DWIS.Service.DownholeECD.Model
             outputs.DownholeEquivalentCirculationDensity.Value = null;
             double? sensorDistanceToBit = null;
             // search for the sensor in the drill string and get the distance to bit, if not found use default value
-            double dist = 0;
-            foreach (var section in drillString.DrillStringSectionList)
+            if (drillString.SensorsList is not null)
             {
-                if (section is not null && section.SectionComponentList is not null)
+                foreach (var sensor in drillString.SensorsList)
                 {
-                    double dist2 = 0;
-                    foreach (var component in section.SectionComponentList)
+                    if (sensor is not null && sensor.DistanceFromBit is not null && (sensor.SensorType & DrillStringSensorTypes.AnnulusPressure) != 0)
                     {
-                        if (component is not null && component.PartList is not null)
-                        {
-                            double dist3 = 0;
-                            foreach (var part in component.PartList)
-                            {
-                                if (part is not null)
-                                {
-                                    if (false)
-                                    {
-                                        dist += dist2 + dist3 + 0;
-                                        sensorDistanceToBit = dist;
-                                        break;
-                                    }
-                                    dist3 += part.TotalLength;
-                                }
-                            }
-                            if (sensorDistanceToBit is not null)
-                            {
-                                break;
-                            }
-                            dist2 += dist3;
-                        }
-                    }
-                    if (sensorDistanceToBit is not null)
-                    {
+                        sensorDistanceToBit = sensor.DistanceFromBit;
                         break;
                     }
-                    dist += section.Count * dist2;
+                }
+            }
+            if (sensorDistanceToBit is null && drillString.DrillStringSectionList is not null)
+            {
+                double dist = 0;
+                foreach (var section in drillString.DrillStringSectionList)
+                {
+                    if (section is not null && section.SectionComponentList is not null)
+                    {
+                        double dist2 = 0;
+                        foreach (var component in section.SectionComponentList)
+                        {
+                            if (component is not null && component.PartList is not null)
+                            {
+                                double dist3 = 0;
+                                foreach (var part in component.PartList)
+                                {
+                                    if (part is not null)
+                                    {
+                                        if (false)
+                                        {
+                                            dist += dist2 + dist3 + 0;
+                                            sensorDistanceToBit = dist;
+                                            break;
+                                        }
+                                        dist3 += part.TotalLength;
+                                    }
+                                }
+                                if (sensorDistanceToBit is not null)
+                                {
+                                    break;
+                                }
+                                dist2 += dist3;
+                            }
+                        }
+                        if (sensorDistanceToBit is not null)
+                        {
+                            break;
+                        }
+                        dist += section.Count * dist2;
+                    }
                 }
             }
             if (sensorDistanceToBit is null)
