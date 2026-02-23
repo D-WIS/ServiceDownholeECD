@@ -21,6 +21,7 @@ It computes and publishes:
 - Registers model queries for required input and contextual data.
 - Reads live data on each loop tick, executes the pressure-to-ECD conversion, and publishes outputs.
 - Logs key input/output values for operational monitoring.
+- Buffers realtime input/output snapshots and periodically dumps them to file.
 
 ## Runtime Flow
 
@@ -41,6 +42,26 @@ This project depends on:
 - `DWIS.RigOS.Common.Worker` infrastructure (through the model dependency chain)
 
 The ECD conversion logic is aligned with the definition described in **SPE-217668-MS**: https://doi.org/10.2118/217668-MS.
+
+## Realtime Input/Output Dumping
+
+The worker keeps an in-process buffer of realtime snapshots for:
+- `RealtimeInputsData`
+- `RealtimeOutputsData`
+
+These snapshots are dumped to JSON files on fixed UTC boundary intervals and the in-memory buffer is cleared after each successful dump to avoid memory growth.
+
+Defaults:
+- dump directory: `/home`
+- dump interval: `01:00:00` (every plain UTC hour)
+
+Configuration keys (`ConfigurationForDownholeECD`):
+- `EnableRealtimeDataDump` (`bool`, default `true`)
+- `RealtimeDataDumpDirectory` (`string`, default `"/home"`)
+- `RealtimeDataDumpInterval` (`TimeSpan`, default `"01:00:00"`)
+
+Output file naming:
+- `downholeecd-realtime-YYYYMMDDTHHMMSSZ.json`
 
 ## Docker
 
